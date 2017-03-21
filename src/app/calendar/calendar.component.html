@@ -1,0 +1,28 @@
+<p #p>
+ 整個月都沒事!
+</p>
+
+<app-calendar-header #myheader>
+  <table class="calendar-header-table" Cheader #Cheader   style="width:100%" >
+      <thead>
+          <tr>
+              <td style="width:14%" *ngFor="let col of ['日','一','二','三','四','五','六']" text-center>星期{{col}}</td>
+          </tr>
+      </thead>
+  </table>
+
+  <table class="calendar-cell-table" Cbody #Cbody style="width:100%">
+      <tbody>
+          <tr *ngFor="let rowIndex of views[0].rowOffsets">
+              <td  style="width:14%" *ngFor="let col of [0,1,2,3,4,5,6]" [ngClass]="{'isToday':views[0].days[rowIndex + col].isToday}">
+                  <app-calendar-day [dateInfo]="views[0].days[rowIndex + col]">
+                    {{views[0].days[rowIndex + col].date.getDate()}}
+                  </app-calendar-day>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+
+
+</app-calendar-header>
+

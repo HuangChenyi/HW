@@ -1,3 +1,4 @@
+import { CalendarComponent } from './calendar/calendar.component';
 import { Advcomp1Component } from './advcomp1/advcomp1.component';
 import { Form2Component } from './form2/form2.component';
 import { FormComponent } from './form/form.component';
@@ -17,6 +18,7 @@ import { CardsComponent } from './cards/cards.component';
 import { fallbackRoute } from './fallback-route';
 
 const routes: Routes = [
+  { path: 'calendar', component: CalendarComponent },
   { path: 'advcomp1', component: Advcomp1Component },
   { path: '', component: LayoutComponent,
     children: [
